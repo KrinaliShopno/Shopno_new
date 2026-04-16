@@ -832,7 +832,7 @@ progress {
     .container-sm,
     .container-xl,
     .container-xxl {
-        max-width: 1380px
+        max-width: 1400px
     }
 }
 /* @media (min-width:1600px) {
