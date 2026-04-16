@@ -5,203 +5,275 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SHOPNO Ecommerce Pvt Ltd</title>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
-body{
-    line-height:1.6;
-}
-header{
-    background:#111;
-    color:#fff;
-    padding:15px 50px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-header h2{
-    color:#00c896;
-}
-nav a{
-    color:#fff;
-    margin-left:20px;
-    text-decoration:none;
-}
-.hero{
-    background:#000;
-    color:#fff;
-    padding:100px 20px;
-    text-align:center;
-}
-.hero h1{
-    font-size:40px;
-}
-.hero button{
-    margin-top:20px;
-    padding:12px 25px;
-    background:#00c896;
-    border:none;
-    color:#fff;
-    cursor:pointer;
-}
-.section{
-    padding:60px 20px;
-    text-align:center;
-}
-.stats{
-    display:flex;
-    justify-content:center;
-    gap:40px;
-}
-.card{
-    padding:20px;
-    border:1px solid #ddd;
-    border-radius:10px;
-    width:250px;
-}
-.services{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
-}
-.team{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-}
-.footer{
-    background:#111;
-    color:#fff;
-    text-align:center;
-    padding:20px;
-}
-input, textarea{
-    width:80%;
-    padding:10px;
-    margin:10px 0;
-}
-button{
-    padding:10px 20px;
-    background:#00c896;
-    border:none;
-    color:#fff;
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+<style>
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#0f0f0f;
+  color:#fff;
+  cursor:none;
+}
+
+/* CURSOR */
+.cursor{
+  position:fixed;
+  width:30px;
+  height:30px;
+  border:2px solid #00ffcc;
+  border-radius:50%;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  z-index:9999;
+  transition:transform 0.15s ease, background 0.2s;
+}
+
+.cursor.active{
+  transform:translate(-50%,-50%) scale(2);
+  background:rgba(0,255,204,0.1);
+}
+
+/* MAGNETIC ELEMENT */
+.magnetic{
+  display:inline-block;
+  transition:transform 0.2s ease;
+}
+
+/* IMAGE TRAIL */
+.icon{
+  position:absolute;
+  pointer-events:none;
+  width:40px;
+  height:40px;
+  object-fit:contain;
+  animation:floatIcon 1.2s ease-out forwards;
+  filter:drop-shadow(0 6px 15px rgba(0,0,0,0.6));
+}
+
+@keyframes floatIcon{
+  0%{transform:translate(0,0) scale(0.6);opacity:1;}
+  100%{transform:translate(var(--x),var(--y)) scale(1.2);opacity:0;}
+}
+
+/* NAV */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 60px;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:120px 20px;
+}
+
+.hero h1{
+  font-size:42px;
+}
+
+.hero p{
+  margin:20px auto;
+  max-width:600px;
+  color:#aaa;
+}
+
+.btn{
+  padding:12px 25px;
+  background:#fff;
+  color:#000;
+  border:none;
+  margin:10px;
+}
+
+/* SECTIONS */
+.section{
+  padding:80px 60px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:#1a1a1a;
+  padding:25px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+.stats{
+  display:flex;
+  justify-content:space-around;
+  text-align:center;
+}
+
+/* CONTACT */
+input,textarea{
+  padding:10px;
+  background:#111;
+  border:1px solid #333;
+  color:#fff;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px;
+  background:#111;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  body{cursor:default;}
+  .cursor{display:none;}
+}
+
+</style>
 </head>
 
 <body>
 
-<header>
-    <h2>SHOPNO</h2>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Services</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Contact</a>
-    </nav>
-</header>
+<!-- CURSOR -->
+<div class="cursor"></div>
 
+<!-- NAV -->
+<nav>
+  <h2>SHOPNO</h2>
+  <div>
+    <a class="magnetic">Home</a>
+    <a class="magnetic">Services</a>
+    <a class="magnetic">Portfolio</a>
+    <a class="magnetic">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
 <section class="hero">
-    <h1>All-in-One eCommerce Solution</h1>
-    <p>Build, Launch & Scale Your Business with SHOPNO Ecommerce Pvt Ltd</p>
-    <button>Get Free Consultation</button>
+  <h1>Build, Launch & Scale Your eCommerce Business</h1>
+  <p>We help brands grow with Shopify development, marketing & marketplace management.</p>
+  <button class="btn magnetic">Get Free Consultation</button>
+  <button class="btn magnetic">View Portfolio</button>
 </section>
 
+<!-- STATS -->
+<section class="section stats">
+  <div><h2>500+</h2><p>Clients</p></div>
+  <div><h2>10+</h2><p>Years</p></div>
+  <div><h2>25+</h2><p>Experts</p></div>
+  <div><h2>1000+</h2><p>Projects</p></div>
+</section>
+
+<!-- SERVICES -->
 <section class="section">
-    <h2>Our Achievements</h2>
-    <div class="stats">
-        <div class="card"><h3>500+</h3><p>Customers</p></div>
-        <div class="card"><h3>10+</h3><p>Years Experience</p></div>
-        <div class="card"><h3>25+</h3><p>Developers</p></div>
-    </div>
+  <h2>Services</h2>
+  <div class="grid">
+    <div class="card magnetic">Shopify Development</div>
+    <div class="card magnetic">UI/UX Design</div>
+    <div class="card magnetic">SEO & Ads</div>
+    <div class="card magnetic">Marketplace Management</div>
+  </div>
 </section>
 
+<!-- CONTACT -->
 <section class="section">
-    <h2>Our Services</h2>
-    <div class="services">
-
-        <div class="card">
-            <h3>Shopify Development</h3>
-            <p>Custom store design & development</p>
-        </div>
-
-        <div class="card">
-            <h3>Digital Marketing</h3>
-            <p>SEO, Ads & Social Growth</p>
-        </div>
-
-        <div class="card">
-            <h3>Marketplace Management</h3>
-            <p>Amazon, Flipkart & Meesho Account Handling</p>
-        </div>
-
-        <div class="card">
-            <h3>Product Photoshoot</h3>
-            <p>Professional Photography & Branding</p>
-        </div>
-
-        <div class="card">
-            <h3>Video Shooting</h3>
-            <p>Ads, Reels & Product Videos</p>
-        </div>
-
-    </div>
+  <h2>Contact</h2>
+  <div class="grid">
+    <input placeholder="Name">
+    <input placeholder="Email">
+    <textarea placeholder="Requirements"></textarea>
+    <button class="btn magnetic">Submit</button>
+  </div>
 </section>
 
-<section class="section">
-    <h2>Portfolio</h2>
-    <p>Showcase your Shopify stores and client work here</p>
-</section>
-
-<section class="section">
-    <h2>Success Stories</h2>
-    <p>Client growth, revenue increase & case studies</p>
-</section>
-
-<section class="section">
-    <h2>Our Team</h2>
-    <div class="team">
-        <div class="card"><p>Developer</p></div>
-        <div class="card"><p>Marketer</p></div>
-        <div class="card"><p>Designer</p></div>
-    </div>
-</section>
-
-<section class="section">
-    <h2>Plans & Pricing</h2>
-    <div class="services">
-        <div class="card"><h3>Basic</h3><p>Starter Plan</p></div>
-        <div class="card"><h3>Pro</h3><p>Growth Plan</p></div>
-        <div class="card"><h3>Premium</h3><p>Advanced Plan</p></div>
-    </div>
-</section>
-
-<section class="section">
-    <h2>B2B Inquiry</h2>
-    <form>
-        <input type="text" placeholder="Your Name"><br>
-        <input type="email" placeholder="Email"><br>
-        <input type="text" placeholder="Company Name"><br>
-        <textarea placeholder="Your Requirement"></textarea><br>
-        <button type="submit">Submit</button>
-    </form>
-</section>
-
-<section class="section">
-    <h2>Contact Us</h2>
-    <p>Email: info@shopno.com</p>
-    <p>Phone: 9876543210</p>
-</section>
-
-<footer class="footer">
-    <p>© 2026 SHOPNO Ecommerce Pvt Ltd</p>
+<footer>
+  <p>© SHOPNO Ecommerce Pvt Ltd</p>
 </footer>
+
+<script>
+
+/* CURSOR FOLLOW */
+const cursor=document.querySelector(".cursor");
+let mouseX=0,mouseY=0,posX=0,posY=0;
+
+document.addEventListener("mousemove",(e)=>{
+  mouseX=e.clientX;
+  mouseY=e.clientY;
+});
+
+function animate(){
+  posX+=(mouseX-posX)*0.15;
+  posY+=(mouseY-posY)*0.15;
+  cursor.style.left=posX+"px";
+  cursor.style.top=posY+"px";
+  requestAnimationFrame(animate);
+}
+animate();
+
+/* MAGNETIC EFFECT */
+document.querySelectorAll(".magnetic").forEach(el=>{
+  el.addEventListener("mousemove",(e)=>{
+    const rect=el.getBoundingClientRect();
+    const x=e.clientX-rect.left-rect.width/2;
+    const y=e.clientY-rect.top-rect.height/2;
+
+    el.style.transform=`translate(${x*0.3}px,${y*0.3}px)`;
+    cursor.classList.add("active");
+  });
+
+  el.addEventListener("mouseleave",()=>{
+    el.style.transform="translate(0,0)";
+    cursor.classList.remove("active");
+  });
+});
+
+/* IMAGE TRAIL */
+const icons=[
+  "images/cart.png",
+  "images/box.png",
+  "images/star.png",
+  "images/payment.png",
+  "images/rocket.png"
+];
+
+let lastTime=0;
+const delay=120;
+
+document.addEventListener("mousemove",(e)=>{
+  const now=Date.now();
+  if(now-lastTime<delay) return;
+  lastTime=now;
+
+  const img=document.createElement("img");
+  img.classList.add("icon");
+  img.src=icons[Math.floor(Math.random()*icons.length)];
+
+  document.body.appendChild(img);
+
+  img.style.left=(e.pageX-20)+"px";
+  img.style.top=(e.pageY-20)+"px";
+
+  img.style.setProperty("--x",(Math.random()*50-25)+"px");
+  img.style.setProperty("--y",(-Math.random()*60-20)+"px");
+
+  setTimeout(()=>img.remove(),1200);
+});
+
+</script>
 
 </body>
 </html>
