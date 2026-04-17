@@ -3,144 +3,148 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SHOPNO Ecommerce Pvt Ltd</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Team Carousel</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
 <style>
 
 /* RESET */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-  background:#0f0f0f;
-  color:#fff;
-  cursor:none;
+/* BODY */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #070707;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  color: #fff;
 }
 
-/* CURSOR */
-.cursor{
-  position:fixed;
-  width:30px;
-  height:30px;
-  border:2px solid #00ffcc;
-  border-radius:50%;
-  pointer-events:none;
-  transform:translate(-50%,-50%);
-  z-index:9999;
-  transition:transform 0.15s ease, background 0.2s;
+/* BIG BG TEXT */
+.about-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(8rem, 20vw, 18rem);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255,255,255,0.05);
+  pointer-events: none;
 }
 
-.cursor.active{
-  transform:translate(-50%,-50%) scale(2);
-  background:rgba(0,255,204,0.1);
+/* CONTAINER */
+.carousel-container {
+  width: 100%;
+  max-width: 1200px;
+  height: 450px;
+  position: relative;
+  perspective: 1200px;
+  overflow: hidden;
 }
 
-/* MAGNETIC ELEMENT */
-.magnetic{
-  display:inline-block;
-  transition:transform 0.2s ease;
+/* TRACK */
+.carousel-track {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
 }
 
-/* IMAGE TRAIL */
-.icon{
-  position:absolute;
-  pointer-events:none;
-  width:40px;
-  height:40px;
-  object-fit:contain;
-  animation:floatIcon 1.2s ease-out forwards;
-  filter:drop-shadow(0 6px 15px rgba(0,0,0,0.6));
+/* CARD */
+.card {
+  position: absolute;
+  width: 280px;
+  height: 380px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #111;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
 }
 
-@keyframes floatIcon{
-  0%{transform:translate(0,0) scale(0.6);opacity:1;}
-  100%{transform:translate(var(--x),var(--y)) scale(1.2);opacity:0;}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* NAV */
-nav{
-  display:flex;
-  justify-content:space-between;
-  padding:20px 60px;
+/* INFO */
+.member-info {
+  text-align: center;
+  margin-top: 30px;
 }
 
-/* HERO */
-.hero{
-  text-align:center;
-  padding:120px 20px;
+.member-name {
+  font-family: 'Bebas Neue';
+  font-size: 3rem;
 }
 
-.hero h1{
-  font-size:42px;
+.member-role {
+  color: #aaa;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
 }
 
-.hero p{
-  margin:20px auto;
-  max-width:600px;
-  color:#aaa;
+/* DOTS */
+.dots {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
 }
 
-.btn{
-  padding:12px 25px;
-  background:#fff;
-  color:#000;
-  border:none;
-  margin:10px;
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #555;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-/* SECTIONS */
-.section{
-  padding:80px 60px;
+.dot.active {
+  background: #fff;
+  transform: scale(1.5);
 }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:25px;
+/* ARROWS */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  z-index: 10;
 }
 
-.card{
-  background:#1a1a1a;
-  padding:25px;
-  border-radius:10px;
-  transition:0.3s;
+.nav-arrow:hover {
+  color: #fff;
 }
 
-.card:hover{
-  transform:translateY(-10px);
-}
-
-.stats{
-  display:flex;
-  justify-content:space-around;
-  text-align:center;
-}
-
-/* CONTACT */
-input,textarea{
-  padding:10px;
-  background:#111;
-  border:1px solid #333;
-  color:#fff;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:40px;
-  background:#111;
-}
+.left { left: 5%; }
+.right { right: 5%; }
 
 /* MOBILE */
 @media(max-width:768px){
-  body{cursor:default;}
-  .cursor{display:none;}
+  .card {
+    width: 220px;
+    height: 300px;
+  }
 }
 
 </style>
@@ -148,130 +152,133 @@ footer{
 
 <body>
 
-<!-- CURSOR -->
-<div class="cursor"></div>
+<h1 class="about-title">OUR TEAM</h1>
 
-<!-- NAV -->
-<nav>
-  <h2>SHOPNO</h2>
-  <div>
-    <a class="magnetic">Home</a>
-    <a class="magnetic">Services</a>
-    <a class="magnetic">Portfolio</a>
-    <a class="magnetic">Contact</a>
+<div class="carousel-container">
+
+  <button class="nav-arrow left">‹</button>
+
+  <div class="carousel-track">
+
+    <div class="card"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800"></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800"></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800"></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800"></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1655249481446-25d575f1c054?w=800"></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800"></div>
+
   </div>
-</nav>
 
-<!-- HERO -->
-<section class="hero">
-  <h1>Build, Launch & Scale Your eCommerce Business</h1>
-  <p>We help brands grow with Shopify development, marketing & marketplace management.</p>
-  <button class="btn magnetic">Get Free Consultation</button>
-  <button class="btn magnetic">View Portfolio</button>
-</section>
+  <button class="nav-arrow right">›</button>
 
-<!-- STATS -->
-<section class="section stats">
-  <div><h2>500+</h2><p>Clients</p></div>
-  <div><h2>10+</h2><p>Years</p></div>
-  <div><h2>25+</h2><p>Experts</p></div>
-  <div><h2>1000+</h2><p>Projects</p></div>
-</section>
+</div>
 
-<!-- SERVICES -->
-<section class="section">
-  <h2>Services</h2>
-  <div class="grid">
-    <div class="card magnetic">Shopify Development</div>
-    <div class="card magnetic">UI/UX Design</div>
-    <div class="card magnetic">SEO & Ads</div>
-    <div class="card magnetic">Marketplace Management</div>
-  </div>
-</section>
+<div class="member-info">
+  <h2 class="member-name">Emily Kim</h2>
+  <p class="member-role">Founder</p>
+</div>
 
-<!-- CONTACT -->
-<section class="section">
-  <h2>Contact</h2>
-  <div class="grid">
-    <input placeholder="Name">
-    <input placeholder="Email">
-    <textarea placeholder="Requirements"></textarea>
-    <button class="btn magnetic">Submit</button>
-  </div>
-</section>
-
-<footer>
-  <p>© SHOPNO Ecommerce Pvt Ltd</p>
-</footer>
+<div class="dots">
+  <div class="dot active"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>
 
 <script>
 
-/* CURSOR FOLLOW */
-const cursor=document.querySelector(".cursor");
-let mouseX=0,mouseY=0,posX=0,posY=0;
-
-document.addEventListener("mousemove",(e)=>{
-  mouseX=e.clientX;
-  mouseY=e.clientY;
-});
-
-function animate(){
-  posX+=(mouseX-posX)*0.15;
-  posY+=(mouseY-posY)*0.15;
-  cursor.style.left=posX+"px";
-  cursor.style.top=posY+"px";
-  requestAnimationFrame(animate);
-}
-animate();
-
-/* MAGNETIC EFFECT */
-document.querySelectorAll(".magnetic").forEach(el=>{
-  el.addEventListener("mousemove",(e)=>{
-    const rect=el.getBoundingClientRect();
-    const x=e.clientX-rect.left-rect.width/2;
-    const y=e.clientY-rect.top-rect.height/2;
-
-    el.style.transform=`translate(${x*0.3}px,${y*0.3}px)`;
-    cursor.classList.add("active");
-  });
-
-  el.addEventListener("mouseleave",()=>{
-    el.style.transform="translate(0,0)";
-    cursor.classList.remove("active");
-  });
-});
-
-/* IMAGE TRAIL */
-const icons=[
-  "images/cart.png",
-  "images/box.png",
-  "images/star.png",
-  "images/payment.png",
-  "images/rocket.png"
+const members = [
+  { name:"Emily Kim", role:"Founder"},
+  { name:"Michael Steward", role:"Creative Director"},
+  { name:"Emma Rodriguez", role:"Lead Developer"},
+  { name:"Julia Gimmel", role:"UX Designer"},
+  { name:"Lisa Anderson", role:"Marketing Manager"},
+  { name:"James Wilson", role:"Product Manager"}
 ];
 
-let lastTime=0;
-const delay=120;
+const cards = document.querySelectorAll(".card");
+const dots = document.querySelectorAll(".dot");
+const nameEl = document.querySelector(".member-name");
+const roleEl = document.querySelector(".member-role");
 
-document.addEventListener("mousemove",(e)=>{
-  const now=Date.now();
-  if(now-lastTime<delay) return;
-  lastTime=now;
+let index = 0;
+let animating = false;
 
-  const img=document.createElement("img");
-  img.classList.add("icon");
-  img.src=icons[Math.floor(Math.random()*icons.length)];
+function update(newIndex){
 
-  document.body.appendChild(img);
+  if(animating) return;
+  animating = true;
 
-  img.style.left=(e.pageX-20)+"px";
-  img.style.top=(e.pageY-20)+"px";
+  index = (newIndex + cards.length) % cards.length;
 
-  img.style.setProperty("--x",(Math.random()*50-25)+"px");
-  img.style.setProperty("--y",(-Math.random()*60-20)+"px");
+  const isMobile = window.innerWidth < 768;
+  const gap1 = isMobile ? 120 : 200;
+  const gap2 = isMobile ? 220 : 360;
 
-  setTimeout(()=>img.remove(),1200);
-});
+  cards.forEach((card,i)=>{
+
+    let offset = i - index;
+    if(offset > cards.length/2) offset -= cards.length;
+    if(offset < -cards.length/2) offset += cards.length;
+
+    let x=0,z=0,scale=1,opacity=1;
+
+    if(offset===0){
+      scale=1.1;
+    }
+    else if(offset===1){
+      x=gap1; z=-100; scale=0.9; opacity=0.9;
+    }
+    else if(offset===-1){
+      x=-gap1; z=-100; scale=0.9; opacity=0.9;
+    }
+    else if(offset===2){
+      x=gap2; z=-300; scale=0.8; opacity=0.6;
+    }
+    else if(offset===-2){
+      x=-gap2; z=-300; scale=0.8; opacity=0.6;
+    }
+    else{
+      x=offset>0?500:-500;
+      opacity=0;
+      scale=0.5;
+    }
+
+    gsap.to(card,{
+      x:x,
+      z:z,
+      scale:scale,
+      opacity:opacity,
+      duration:0.8,
+      ease:"power3.out"
+    });
+
+  });
+
+  gsap.to(".member-info",{
+    opacity:0,
+    y:10,
+    duration:0.3,
+    onComplete:()=>{
+      nameEl.textContent = members[index].name;
+      roleEl.textContent = members[index].role;
+      gsap.to(".member-info",{opacity:1,y:0});
+    }
+  });
+
+  dots.forEach((d,i)=>d.classList.toggle("active",i===index));
+
+  setTimeout(()=>animating=false,800);
+}
+
+document.querySelector(".left").onclick=()=>update(index-1);
+document.querySelector(".right").onclick=()=>update(index+1);
+
+dots.forEach((d,i)=>d.onclick=()=>update(i));
+
+update(0);
 
 </script>
 
