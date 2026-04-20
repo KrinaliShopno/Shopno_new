@@ -10906,7 +10906,7 @@ position: absolute;
 .m-role {
   font-size: 13px;
   color: var(--text-color);
-  margin-top: 4px;
+  margin-top:  4px;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
