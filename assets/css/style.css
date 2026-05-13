@@ -3365,7 +3365,7 @@ label.error {
 
 .hero .section__content-title {
   /* max-width: 18ch; */
-  font-size: 50px;
+  font-size: 45px;
 }
 
 .section__content-title span {
@@ -12480,7 +12480,8 @@ width: 100%;
     align-items: center;
     font-size: 20px;
     font-weight: 500;
-    color: #1a1a1a;
+    color: var(--text-color);
+    justify-content: center;
 }
 
 /* Arrow */
