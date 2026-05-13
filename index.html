@@ -243,42 +243,53 @@
     <section class="hero">
         <div class="hero__animation">
             <img src="assets/images/Airoplan.png" alt="Image">
-            <img src="assets/images/man-Icon.png" alt="Image">
+            <img src="assets/images/cartoon_2.png" alt="Image">
             <!-- <img src="assets/images/1024561_OJXL4N0-Photoroom.png" alt="Image"> -->
             <!-- <img src="assets/images/dots.png" alt="Image"> -->
-            <img src="assets/images/cartoon-man.png" alt="Image">
+            <img src="assets/images/cartoon_1.png" alt="Image">
         </div>
         <div class="container">
             <div class="section_main row gy-5 gy-lg-0 align-items-center justify-content-between">
                 <div class="col-12 col-lg-6">
                     <div class="section__content">
-                        <span class="section__content-sub-title headingFour wow fadeInDown"
+                        <h1 class="section__content-sub-title headingFour wow fadeInDown"
                             data-wow-duration="0.8s"><img src="assets/images/right-Arrow-Photoroom.png" alt="vector">
-                            Build, Launch & Scale Your eCommerce Business
-                        </span>
-                        <h1 class="section__content-title display-3 wow fadeInUp" data-wow-duration="0.8s">All in
+                            <!-- Best eCommerce Website Development Company in Surat -->
+                            Trusted Shopify & Ecommerce Experts In Surat
+                    </h1>
+                        
+<!-- <span class="section__content-sub-title">
+    <img src="assets/images/right-Arrow-Photoroom.png" alt="arrow" class="arrow-anim">
 
-                            <span class="word d-inline-flex">
-                                <span data-wow-duration="0.6s" data-wow-delay="0.1s" class="letter wow fadeInDown">One
-                                    Place</span>
+    Build, Launch & Scale
+    <span class="typing-wrapper">
+        <span id="text"></span>
+        <span class="cursor"></span>
+    </span>
+</span> -->
+                        <h1 class="section__content-title display-3 wow fadeInUp" data-wow-duration="0.8s">Build Powerful Ecommerce Websites That Drive Sales
 
-                            </span>
+                            <!-- <span class="word d-inline-flex">
+                                <span data-wow-duration="0.6s" data-wow-delay="0.1s" class="letter wow fadeInDown">eCommerce Websites </span>
+
+                            </span> -->
 
                         </h1>
-                        <p class="section__content-text wow fadeInDown" data-wow-duration="0.8s">We help brands grow
-                            with Shopify development, marketplace management, product shoots, and performance marketing.
+                        <p class="section__content-text wow fadeInDown" data-wow-duration="0.8s">We help brands, startups, and businesses create modern ecommerce websites that are fast, SEO-optimized, mobile-friendly, and designed for higher conversions.
                         </p>
                         <div class="btn-group mt_40 wow fadeInUp" data-wow-duration="0.8s">
                             <a href="contact.html" class="btn_theme btn_theme_active">Get Free Consultation<i
                                     class="bi bi-arrow-up-right"></i><span></span></a>
-                            <a href="Portfolio.html" class="btn_theme">View Portfolio<i
-                                    class="bi bi-arrow-up-right"></i><span></span></a>
+                            <a href="Portfolio.html" class="btn_theme">
+                                View Our Portfolio
+                                <!-- Start Your Online Store -->
+                                <i class="bi bi-arrow-up-right"></i><span></span></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 col-xxl-5">
                     <div class="hero__thumb wow fadeInUp" data-wow-duration="0.8s">
-                        <img src="assets/images/home-banner.png" alt="Image">
+                        <img src="assets/images/home-banner (2)-Photoroom.png" alt="Image">
                     </div>
                 </div>
             </div>
@@ -1930,66 +1941,7 @@
         });
     </script>
 
-    <script>
-        const icons = [
-            { svg: `<svg viewBox="0 0 24 24"><path d="M6 6h15l-2 10H8z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>`, color: "#6366f1" },
-
-            { svg: `<svg viewBox="0 0 24 24"><path d="M3 9l2-4h14l2 4v10H3z"/></svg>`, color: "#10b981" },
-
-            { svg: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 14s2 2 4 2 4-2 4-2"/></svg>`, color: "#f59e0b" },
-
-            { svg: `<svg viewBox="0 0 24 24"><path d="M8 16l-4-4 4-4"/><path d="M16 8l4 4-4 4"/></svg>`, color: "#3b82f6" },
-
-            { svg: `<svg viewBox="0 0 24 24"><path d="M12 2l5 5-7 7-5-5z"/></svg>`, color: "#ef4444" },
-
-            { svg: `<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M5 20c0-4 14-4 14 0"/></svg>`, color: "#8b5cf6" }
-        ];
-
-        let lastTime = 0;
-
-        document.addEventListener("mousemove", (e) => {
-            const now = Date.now();
-
-            if (now - lastTime < 180) return;
-            lastTime = now;
-
-            spawnIcons(e.clientX, e.clientY);
-        });
-
-        function spawnIcons(x, y) {
-            const count = 2;
-
-            for (let i = 0; i < count; i++) {
-                const item = icons[Math.floor(Math.random() * icons.length)];
-
-                const icon = document.createElement("div");
-                icon.className = "float-icon";
-                icon.innerHTML = item.svg;
-
-                const svg = icon.querySelector("svg");
-                svg.style.stroke = item.color;
-
-                // ✅ PROFESSIONAL SUBTLE SHADOW (KEY PART)
-                svg.style.filter = `
-      drop-shadow(0 2px 4px rgba(0,0,0,0.12))
-      drop-shadow(0 0 3px ${item.color}22)
-    `;
-
-                icon.style.left = (x + (Math.random() * 14 - 7)) + "px";
-                icon.style.top = (y - 10) + "px";
-
-                const spreadX = (Math.random() - 0.5) * 60;
-                const spreadY = -(Math.random() * 60 + 30);
-
-                icon.style.setProperty("--x", spreadX + "px");
-                icon.style.setProperty("--y", spreadY + "px");
-
-                document.body.appendChild(icon);
-
-                setTimeout(() => icon.remove(), 1800);
-            }
-        }
-    </script>
+   
     <script>
         const track = document.getElementById("logoTrack");
         let speed = 0.8; // control speed
@@ -2012,6 +1964,41 @@
 
         animate();
     </script>
+    <script>
+
+/* Animate only this part */
+const text = "Your eCommerce Business";
+
+let index = 0;
+let isDeleting = false;
+
+function animateText() {
+  const el = document.getElementById("text");
+
+  if (!isDeleting) {
+    index++;
+    el.textContent = text.substring(0, index);
+
+    if (index === text.length) {
+      isDeleting = true;
+      setTimeout(animateText, 1500);
+      return;
+    }
+  } else {
+    index--;
+    el.textContent = text.substring(0, index);
+
+    if (index === 0) {
+      isDeleting = false;
+    }
+  }
+
+  setTimeout(animateText, isDeleting ? 40 : 60);
+}
+
+animateText();
+
+</script>
 </body>
 
 <!-- Mirrored from pixner.net/finview/main/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Apr 2026 09:15:17 GMT -->
