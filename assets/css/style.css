@@ -1,41 +1,5 @@
 @charset "UTF-8";
-/* ==============
- ========= css documentation =========
-
- * Template Name: FINVIEW 
- * Version: 1.0
- * Author: pixelaxis
- * Author URI: https://themeforest.net/user/pixelaxis
- * Description: Financial Loan Review and Comparison Website Template
-
- 01. abstracts
-     1.1 --> mixins
-     1.2 --> variables
-
- 02. base
-     2.1 --> reset
-     2.2 --> typography
-     2.3 --> global
-
- 03. components
-     3.1 --> buttons
-     3.2 --> forms
-     3.3 --> preloader
-     3.4 --> faq-section
-     3.5 --> custom-animation
-
- 04. layout
-     4.1 --> header
-     4.2 --> banner
-     4.3 --> footer
-
- 05. sections
-
-
- 06. responsive
-
-    =========================
-============== */
+/* =================== css documentation ============== */
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800;900&amp;display=swap");
 
 /* ==== 
@@ -1923,10 +1887,12 @@ a.conditions_apply::after {
   position: relative;
   z-index: 1;
 }
-.btn_theme1{
-   border: 1px solid var(--w);
-   color: var(--text-color);
+
+.btn_theme1 {
+  border: 1px solid var(--w);
+  color: var(--text-color);
 }
+
 .btn_theme span {
   position: absolute;
   display: block;
@@ -10144,8 +10110,8 @@ position: absolute;
     width: 100%;
     justify-content: center;
   }
-.btn_theme 
-  .section__content .section__header-sub-title,
+
+  .btn_theme .section__content .section__header-sub-title,
   .section__content .section__content-sub-title,
   .section__header .section__header-sub-title,
   .section__header .section__content-sub-title {
@@ -13525,4 +13491,76 @@ position: absolute;
   .ach-divider {
     display: none;
   }
+}
+
+/* ───────── HERO BANNER (UNIQUE GRADIENT) ───────── */
+.page-banner {
+  background: linear-gradient(-45deg, #000000, #1a1500, #332800, #111111);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  margin: 125px 0 70px;
+  position: relative;
+  padding: 100px 80px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 196, 0, 0.1);
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.page-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(255, 196, 0, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.page-banner .breadcrumb-wrap {
+  position: relative;
+  z-index: 2;
+}
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.breadcrumb-nav a {
+  color: var(--primary-color);
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.breadcrumb-nav a:hover {
+  color: #fff;
+}
+.breadcrumb-nav span {
+  color: #94a3b8;
+  font-size: 18px;
+}
+.page-banner h1 {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 1;
+  margin: 0;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.page-banner h1 span {
+  color: var(--primary-color);
+}
+.banner-accent-line {
+  width: 80px;
+  height: 4px;
+  background: var(--primary-color);
+  border-radius: 4px;
+  margin: 30px auto 0;
+  box-shadow: 0 4px 15px rgba(255, 196, 0, 0.4);
 }
