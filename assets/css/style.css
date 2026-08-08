@@ -13506,9 +13506,17 @@ position: absolute;
 }
 
 @keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .page-banner::before {
@@ -13523,6 +13531,7 @@ position: absolute;
   position: relative;
   z-index: 2;
 }
+
 .breadcrumb-nav {
   display: flex;
   align-items: center;
@@ -13530,6 +13539,7 @@ position: absolute;
   justify-content: center;
   margin-bottom: 16px;
 }
+
 .breadcrumb-nav a {
   color: var(--primary-color);
   font-size: 18px;
@@ -13537,13 +13547,16 @@ position: absolute;
   text-decoration: none;
   transition: color 0.3s;
 }
+
 .breadcrumb-nav a:hover {
   color: #fff;
 }
+
 .breadcrumb-nav span {
   color: #94a3b8;
   font-size: 18px;
 }
+
 .page-banner h1 {
   font-size: 80px;
   color: #fff;
@@ -13551,11 +13564,13 @@ position: absolute;
   letter-spacing: 2px;
   line-height: 1;
   margin: 0;
-  text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
+
 .page-banner h1 span {
   color: var(--primary-color);
 }
+
 .banner-accent-line {
   width: 80px;
   height: 4px;
@@ -13563,4 +13578,14 @@ position: absolute;
   border-radius: 4px;
   margin: 30px auto 0;
   box-shadow: 0 4px 15px rgba(255, 196, 0, 0.4);
+}
+
+/* Fix for image sizing conflict with global .about-us img:nth-child(2) rule */
+.about-page-intro .about-unique-image-wrap>img {
+  position: relative !important;
+  width: auto !important;
+  max-width: 100% !important;
+  left: auto !important;
+  bottom: auto !important;
+  animation: none !important;
 }
