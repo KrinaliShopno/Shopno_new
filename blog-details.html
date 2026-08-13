@@ -162,118 +162,142 @@
     </section>
 
     <!-- Blog Details Section -->
-    <section class="blog-details-section section" style="background: #f8f9fa;">
-        <div class="container">
-            <div class="row gy-5">
+    <section class="blog-details-section section pb-120 bg-light position-relative" style="margin-top: -80px; z-index: 10;">
+        <!-- Animated Background Blobs -->
+        <div class="bg-blob blob-1"></div>
+        <div class="bg-blob blob-2"></div>
+
+        <div class="container position-relative z-1">
+            <!-- Floating Social Share (Desktop) -->
+            <div class="floating-share-bar d-none d-xl-flex">
+                <span>Share</span>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-link-45deg"></i></a>
+            </div>
+
+            <div class="row gy-5 justify-content-center">
                 <!-- Main Content -->
                 <div class="col-12 col-lg-8">
-                    <div class="blog-details-content glass-panel" style="background: #fff; padding: 40px;">
-                        <img src="assets/images/blog/blog-1.png" alt="Shopify Apps" class="img-fluid rounded mb-4 w-100" onerror="this.src='https://via.placeholder.com/800x400/111/ffc107?text=Shopify+Apps'">
-                        
-                        <ul class="meta d-flex gap-4 list-unstyled mb-4" style="color: #777;">
-                            <li><i class="bi bi-person text-primary me-2"></i> Shopno Team</li>
-                            <li><i class="bi bi-calendar text-primary me-2"></i> Oct 15, 2026</li>
-                            <li><i class="bi bi-tag text-primary me-2"></i> Shopify</li>
-                            <li><i class="bi bi-chat text-primary me-2"></i> 3 Comments</li>
-                        </ul>
-
-                        <h2 class="mb-4" style="font-weight: 800; font-size: 2.2rem; color: #111;">Top 10 Shopify Apps for Ecommerce Growth in 2026</h2>
-                        
-                        <p style="color: #555; line-height: 1.8; font-size: 1.1rem;">
-                            Scaling an ecommerce business requires more than just a great product; it requires the right tools to streamline operations, enhance marketing, and optimize the customer experience. Shopify’s app ecosystem is vast, offering solutions for almost every challenge a merchant might face.
-                        </p>
-                        
-                        <h4 class="mt-5 mb-3" style="font-weight: 700; color: #111;">1. Klaviyo: Email Marketing & SMS</h4>
-                        <p style="color: #555; line-height: 1.8;">
-                            Klaviyo remains the undisputed king of ecommerce email marketing. Its deep integration with Shopify allows you to create highly targeted flows based on customer behavior, such as abandoned carts, welcome series, and post-purchase follow-ups.
-                        </p>
-
-                        <blockquote class="custom-blockquote mt-4 mb-4 p-4" style="border-left: 5px solid var(--primary-color); background: #f9f9fa; font-style: italic; font-size: 1.2rem; color: #333;">
-                            "The right stack of Shopify apps can increase your store's conversion rate by up to 30% without increasing your ad spend."
-                        </blockquote>
-
-                        <h4 class="mt-5 mb-3" style="font-weight: 700; color: #111;">2. Loox: Product Reviews & Photos</h4>
-                        <p style="color: #555; line-height: 1.8;">
-                            Social proof is critical for conversion. Loox makes it incredibly easy to collect photo reviews from your customers and display them beautifully on your product pages, significantly boosting trust.
-                        </p>
-
-                        <div class="row my-5">
-                            <div class="col-md-6">
-                                <img src="https://via.placeholder.com/400x300/111/ffc107?text=Growth+Strategy" class="img-fluid rounded" alt="Growth">
-                            </div>
-                            <div class="col-md-6">
-                                <img src="https://via.placeholder.com/400x300/111/ffc107?text=Analytics" class="img-fluid rounded mt-4 mt-md-0" alt="Analytics">
-                            </div>
+                    <div class="blog-details-wrapper">
+                        <div class="blog-details-image">
+                            <img src="assets/images/blog/blog-1.png" alt="Shopify Apps" class="img-fluid w-100" onerror="this.src='https://placehold.co/800x400/111/ffc107?text=Shopify+Apps'">
                         </div>
+                        
+                        <div class="blog-details-content">
+                            <ul class="blog-meta-badges">
+                                <li><i class="bi bi-person"></i> Shopno Team</li>
+                                <li><i class="bi bi-calendar"></i> Oct 15, 2026</li>
+                                <li><i class="bi bi-tag"></i> Shopify</li>
+                                <li><i class="bi bi-chat"></i> 3 Comments</li>
+                            </ul>
 
-                        <h3 class="mb-3" style="font-weight: 800; color: #111;">Conclusion</h3>
-                        <p style="color: #555; line-height: 1.8;">
-                            While apps are powerful, overloading your store with too many can slow down your site speed. At Shopno Ecommerce Pvt Ltd, we help you audit, select, and seamlessly integrate the perfect app stack for your specific business goals. If you need help scaling your Shopify store, get in touch with our team today!
-                        </p>
+                            <h2 class="blog-details-title">Top 10 Shopify Apps for Ecommerce Growth in 2026</h2>
+                            
+                            <p class="blog-details-text">
+                                Scaling an ecommerce business requires more than just a great product; it requires the right tools to streamline operations, enhance marketing, and optimize the customer experience. Shopify’s app ecosystem is vast, offering solutions for almost every challenge a merchant might face.
+                            </p>
+                            
+                            <h4 class="blog-details-subtitle">1. Klaviyo: Email Marketing & SMS</h4>
+                            <p class="blog-details-text">
+                                Klaviyo remains the undisputed king of ecommerce email marketing. Its deep integration with Shopify allows you to create highly targeted flows based on customer behavior, such as abandoned carts, welcome series, and post-purchase follow-ups.
+                            </p>
 
-                        <!-- Share & Tags -->
-                        <div class="d-flex justify-content-between align-items-center mt-5 pt-4" style="border-top: 1px solid #eee;">
-                            <div class="tags">
-                                <span class="fw-bold me-2">Tags:</span>
-                                <a href="#" class="badge bg-light text-dark text-decoration-none p-2 border me-1">Shopify</a>
-                                <a href="#" class="badge bg-light text-dark text-decoration-none p-2 border">Growth</a>
+                            <blockquote class="blog-blockquote">
+                                <i class="bi bi-quote quote-icon"></i>
+                                <p>"The right stack of Shopify apps can increase your store's conversion rate by up to 30% without increasing your ad spend."</p>
+                            </blockquote>
+
+                            <h4 class="blog-details-subtitle">2. Loox: Product Reviews & Photos</h4>
+                            <p class="blog-details-text">
+                                Social proof is critical for conversion. Loox makes it incredibly easy to collect photo reviews from your customers and display them beautifully on your product pages, significantly boosting trust.
+                            </p>
+
+                            <div class="row blog-details-gallery">
+                                <div class="col-md-6">
+                                    <img src="https://placehold.co/400x300/111/ffc107?text=Growth+Strategy" class="img-fluid rounded" alt="Growth">
+                                </div>
+                                <div class="col-md-6">
+                                    <img src="https://placehold.co/400x300/111/ffc107?text=Analytics" class="img-fluid rounded mt-4 mt-md-0" alt="Analytics">
+                                </div>
                             </div>
-                            <div class="share">
-                                <span class="fw-bold me-2">Share:</span>
-                                <a href="#" class="text-dark me-2 fs-5 hover-primary"><i class="bi bi-facebook"></i></a>
-                                <a href="#" class="text-dark me-2 fs-5 hover-primary"><i class="bi bi-twitter"></i></a>
-                                <a href="#" class="text-dark fs-5 hover-primary"><i class="bi bi-linkedin"></i></a>
+
+                            <h3 class="blog-details-subtitle">Conclusion</h3>
+                            <p class="blog-details-text">
+                                While apps are powerful, overloading your store with too many can slow down your site speed. At Shopno Ecommerce Pvt Ltd, we help you audit, select, and seamlessly integrate the perfect app stack for your specific business goals. If you need help scaling your Shopify store, get in touch with our team today!
+                            </p>
+
+                            <!-- Share & Tags -->
+                            <div class="blog-share-tags">
+                                <div class="tags">
+                                    <span class="fw-bold me-2">Tags:</span>
+                                    <a href="#" class="blog-tag">Shopify</a>
+                                    <a href="#" class="blog-tag">Growth</a>
+                                </div>
+                                <div class="share">
+                                    <span class="fw-bold me-2">Share:</span>
+                                    <a href="#"><i class="bi bi-facebook"></i></a>
+                                    <a href="#"><i class="bi bi-twitter-x"></i></a>
+                                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Comments Section -->
-                    <div class="comments-section mt-5">
-                        <h3 class="mb-4" style="font-weight: 800;">3 Comments</h3>
+                    <div class="comments-section">
+                        <h3 class="comments-title">3 Comments</h3>
                         
                         <!-- Comment 1 -->
-                        <div class="d-flex mb-4 p-4 rounded" style="background: #fff; border: 1px solid rgba(0,0,0,0.03); box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
-                            <div class="flex-shrink-0 me-3">
-                                <img src="https://via.placeholder.com/60" class="rounded-circle" alt="User">
+                        <div class="comment-card">
+                            <div class="comment-avatar">
+                                <img src="https://placehold.co/60" alt="User">
                             </div>
-                            <div>
-                                <h5 class="mb-1 fw-bold">Rahul Sharma <span class="text-muted ms-2 fs-6 fw-normal">Oct 16, 2026</span></h5>
-                                <p class="text-muted mb-2">Great list! I've been using Klaviyo for a while now and the ROI is incredible. Would you also recommend any specific apps for subscription boxes?</p>
-                                <a href="#" class="text-primary text-decoration-none fw-bold">Reply</a>
+                            <div class="comment-content">
+                                <h5 class="comment-name">Rahul Sharma <span class="comment-date">Oct 16, 2026</span></h5>
+                                <p class="comment-text">Great list! I've been using Klaviyo for a while now and the ROI is incredible. Would you also recommend any specific apps for subscription boxes?</p>
+                                <a href="#" class="comment-reply">Reply</a>
                             </div>
                         </div>
 
                         <!-- Comment 2 -->
-                        <div class="d-flex mb-4 p-4 rounded ms-5" style="background: #fff; border: 1px solid rgba(0,0,0,0.03); box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
-                            <div class="flex-shrink-0 me-3">
-                                <img src="https://via.placeholder.com/60" class="rounded-circle" alt="User">
+                        <div class="comment-card reply">
+                            <div class="comment-avatar">
+                                <img src="https://placehold.co/60" alt="User">
                             </div>
-                            <div>
-                                <h5 class="mb-1 fw-bold">Shopno Team <span class="badge bg-primary ms-2">Author</span></h5>
-                                <p class="text-muted mb-2">Hi Rahul! Yes, for subscription boxes, we highly recommend Recharge. It integrates perfectly with Shopify and offers great customer portal features.</p>
-                                <a href="#" class="text-primary text-decoration-none fw-bold">Reply</a>
+                            <div class="comment-content">
+                                <h5 class="comment-name">Shopno Team <span class="comment-badge">Author</span></h5>
+                                <p class="comment-text">Hi Rahul! Yes, for subscription boxes, we highly recommend Recharge. It integrates perfectly with Shopify and offers great customer portal features.</p>
+                                <a href="#" class="comment-reply">Reply</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Leave a Reply -->
-                    <div class="leave-reply-section mt-5 glass-panel" style="background: #fff; padding: 40px;">
-                        <h3 class="mb-4" style="font-weight: 800;">Leave a Reply</h3>
-                        <p class="text-muted mb-4">Your email address will not be published. Required fields are marked *</p>
+                    <div class="leave-reply-section">
+                        <h3 class="reply-title">Leave a Reply</h3>
+                        <p class="reply-subtitle">Your email address will not be published. Required fields are marked *</p>
                         
-                        <form>
+                        <form class="reply-form">
                             <div class="row gy-4">
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control bg-light border-0 p-3" placeholder="Your Name *" required style="border-radius: 12px;">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Your Name *" required>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="email" class="form-control bg-light border-0 p-3" placeholder="Your Email *" required style="border-radius: 12px;">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Your Email *" required>
+                                    </div>
                                 </div>
                                 <div class="col-12">
-                                    <textarea rows="5" class="form-control bg-light border-0 p-3" placeholder="Write your comment here..." required style="border-radius: 12px;"></textarea>
+                                    <div class="form-group">
+                                        <textarea rows="5" class="form-control" placeholder="Write your comment here..." required></textarea>
+                                    </div>
                                 </div>
-                                <div class="col-12">
-                                    <button type="submit" class="glow-btn border-0">Post Comment <i class="bi bi-send ms-2"></i></button>
+                                <div class="col-12 mt-4">
+                                    <button type="submit" class="btn_theme btn_theme_active">Post Comment <i class="bi bi-send ms-2"></i><span></span></button>
                                 </div>
                             </div>
                         </form>
@@ -283,60 +307,64 @@
 
                 <!-- Sidebar -->
                 <div class="col-12 col-lg-4">
-                    <div class="blog-sidebar">
+                    <div class="blog-sidebar sticky-sidebar">
                         
                         <!-- Search Widget -->
-                        <div class="widget p-4 rounded mb-4" style="background: #fff; box-shadow: 0 5px 20px rgba(0,0,0,0.03);">
-                            <h4 class="fw-bold mb-3">Search</h4>
+                        <div class="sidebar-widget search-widget">
+                            <h4 class="widget-title">Search</h4>
                             <div class="input-group">
-                                <input type="text" class="form-control bg-light border-0" placeholder="Search articles...">
-                                <button class="btn btn-primary" type="button"><i class="bi bi-search"></i></button>
+                                <input type="text" class="form-control" placeholder="Search articles...">
+                                <button class="btn search-btn" type="button"><i class="bi bi-search"></i></button>
                             </div>
                         </div>
 
                         <!-- Categories Widget -->
-                        <div class="widget p-4 rounded mb-4" style="background: #fff; box-shadow: 0 5px 20px rgba(0,0,0,0.03);">
-                            <h4 class="fw-bold mb-3">Categories</h4>
-                            <ul class="list-unstyled mb-0">
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-muted d-flex justify-content-between align-items-center hover-primary">Shopify Development <span class="badge bg-light text-dark border">12</span></a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-muted d-flex justify-content-between align-items-center hover-primary">Ecommerce SEO <span class="badge bg-light text-dark border">8</span></a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-muted d-flex justify-content-between align-items-center hover-primary">Digital Marketing <span class="badge bg-light text-dark border">15</span></a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-muted d-flex justify-content-between align-items-center hover-primary">Custom Web Dev <span class="badge bg-light text-dark border">6</span></a></li>
-                                <li><a href="#" class="text-decoration-none text-muted d-flex justify-content-between align-items-center hover-primary">UI/UX Design <span class="badge bg-light text-dark border">9</span></a></li>
+                        <div class="sidebar-widget categories-widget">
+                            <h4 class="widget-title">Categories</h4>
+                            <ul class="widget-list">
+                                <li><a href="#">Shopify Development <span>12</span></a></li>
+                                <li><a href="#">Ecommerce SEO <span>8</span></a></li>
+                                <li><a href="#">Digital Marketing <span>15</span></a></li>
+                                <li><a href="#">Custom Web Dev <span>6</span></a></li>
+                                <li><a href="#">UI/UX Design <span>9</span></a></li>
                             </ul>
                         </div>
 
                         <!-- Recent Posts Widget -->
-                        <div class="widget p-4 rounded mb-4" style="background: #fff; box-shadow: 0 5px 20px rgba(0,0,0,0.03);">
-                            <h4 class="fw-bold mb-4">Recent Posts</h4>
+                        <div class="sidebar-widget recent-posts-widget">
+                            <h4 class="widget-title">Recent Posts</h4>
                             
-                            <div class="d-flex mb-3">
-                                <img src="https://via.placeholder.com/80x80/111/ffc107?text=Web" class="rounded me-3" alt="Post" style="width: 70px; height: 70px; object-fit: cover;">
-                                <div>
-                                    <h6 class="fw-bold mb-1"><a href="#" class="text-dark text-decoration-none hover-primary">Why Custom Web Development Wins</a></h6>
-                                    <small class="text-muted"><i class="bi bi-calendar me-1"></i> Oct 12, 2026</small>
+                            <div class="recent-post-item">
+                                <div class="post-thumb">
+                                    <img src="https://placehold.co/80x80/111/ffc107?text=Web" alt="Post">
+                                </div>
+                                <div class="post-info">
+                                    <h6><a href="#">Why Custom Web Development Wins</a></h6>
+                                    <span class="post-date"><i class="bi bi-calendar"></i> Oct 12, 2026</span>
                                 </div>
                             </div>
                             
-                            <div class="d-flex mb-3">
-                                <img src="https://via.placeholder.com/80x80/111/ffc107?text=SEO" class="rounded me-3" alt="Post" style="width: 70px; height: 70px; object-fit: cover;">
-                                <div>
-                                    <h6 class="fw-bold mb-1"><a href="#" class="text-dark text-decoration-none hover-primary">SEO Best Practices for Ecommerce</a></h6>
-                                    <small class="text-muted"><i class="bi bi-calendar me-1"></i> Oct 08, 2026</small>
+                            <div class="recent-post-item">
+                                <div class="post-thumb">
+                                    <img src="https://placehold.co/80x80/111/ffc107?text=SEO" alt="Post">
+                                </div>
+                                <div class="post-info">
+                                    <h6><a href="#">SEO Best Practices for Ecommerce</a></h6>
+                                    <span class="post-date"><i class="bi bi-calendar"></i> Oct 08, 2026</span>
                                 </div>
                             </div>
                             
                         </div>
 
                         <!-- Tags Widget -->
-                        <div class="widget p-4 rounded" style="background: #fff; box-shadow: 0 5px 20px rgba(0,0,0,0.03);">
-                            <h4 class="fw-bold mb-3">Popular Tags</h4>
-                            <div class="d-flex flex-wrap gap-2">
-                                <a href="#" class="badge bg-light text-dark border p-2 text-decoration-none hover-bg-primary">Shopify</a>
-                                <a href="#" class="badge bg-light text-dark border p-2 text-decoration-none hover-bg-primary">Growth</a>
-                                <a href="#" class="badge bg-light text-dark border p-2 text-decoration-none hover-bg-primary">Sales</a>
-                                <a href="#" class="badge bg-light text-dark border p-2 text-decoration-none hover-bg-primary">App</a>
-                                <a href="#" class="badge bg-light text-dark border p-2 text-decoration-none hover-bg-primary">Design</a>
+                        <div class="sidebar-widget tags-widget">
+                            <h4 class="widget-title">Popular Tags</h4>
+                            <div class="tags-cloud">
+                                <a href="#">Shopify</a>
+                                <a href="#">Growth</a>
+                                <a href="#">Sales</a>
+                                <a href="#">App</a>
+                                <a href="#">Design</a>
                             </div>
                         </div>
 
