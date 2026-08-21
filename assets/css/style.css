@@ -12569,18 +12569,7 @@ position: absolute;
   font-size: 18px;
 }
 
-.page-banner h1 {
-  font-size: 80px;
-  color: #fff;
-  text-align: center;
-  letter-spacing: 2px;
-  line-height: 1;
-  margin: 0;
-}
 
-.page-banner h1 span {
-  color: var(--primary-color);
-}
 
 .banner-accent-line {
   width: 60px;
@@ -13501,7 +13490,7 @@ position: absolute;
   animation: gradientBG 12s ease infinite;
   margin: 125px 0 0px;
   position: relative;
-  padding: 100px 80px;
+  padding: 60px 80px;
   overflow: hidden;
   border-bottom: 1px solid rgba(255, 196, 0, 0.1);
 }
@@ -13559,7 +13548,7 @@ position: absolute;
 }
 
 .page-banner h1 {
-  font-size: 80px;
+  font-size: 50px;
   color: #fff;
   text-align: center;
   letter-spacing: 2px;
@@ -15477,3 +15466,242 @@ position: absolute;
 
 
 
+
+
+/* ==== 
+ --------- (Life@Shopno) Custom Styles start ---------
+ ==== */
+
+/* Culture Card Hover */
+.culture-card {
+    transition: all 0.4s ease;
+    cursor: default;
+    border-color: #f0f0f0 !important;
+}
+
+.culture-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05) !important;
+    border-color: rgba(255, 196, 0, 0.3) !important;
+}
+
+.culture-card .culture-icon {
+    transition: all 0.4s ease;
+}
+
+.culture-card:hover .culture-icon {
+    background: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    border-style: solid !important;
+    transform: rotate(10deg) scale(1.1);
+}
+
+.culture-card:hover .culture-icon i {
+    color: #fff !important;
+}
+
+/* Hiring Form Inputs Focus */
+.form-control:focus, .form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 196, 0, 0.25) !important;
+    border-color: rgba(255, 196, 0, 0.5) !important;
+    outline: 0;
+}
+
+/* Team Carousel Custom Styles */
+.team-carousel .slick-slide {
+    margin: 0 10px; /* add gap between slides */
+}
+.team-carousel .slick-list {
+    margin: 0 -10px; /* offset the margin on the container */
+}
+
+
+/* Floating Image Animation for Unique Design */
+@keyframes floatAnimation {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+.floating-img {
+    animation: floatAnimation 4s ease-in-out infinite;
+}
+
+/* Life @ Shopno Dark Theme */
+.dark-culture-card {
+    background-color: #252525;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 35px;
+    height: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+.dark-culture-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+.dark-culture-card p {
+    color: #999;
+    font-size: 15px;
+    line-height: 1.8;
+}
+.dark-culture-icon {
+    margin-bottom: 25px;
+}
+
+/* Life @ Shopno Unique White Theme */
+.unique-white-card {
+    background-color: #ffffff;
+    border: 1px solid rgba(0,0,0,0.03);
+    border-radius: 20px;
+    padding: 40px;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
+}
+.unique-white-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+.unique-white-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(255, 196, 0, 0.15);
+    border-color: rgba(255, 196, 0, 0.3);
+}
+.unique-white-card:hover::before {
+    transform: scaleX(1);
+}
+.unique-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 196, 0, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+.unique-white-card:hover .unique-icon-wrapper {
+    background: var(--primary-color);
+}
+.unique-icon-wrapper i {
+    font-size: 28px;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+.unique-white-card:hover .unique-icon-wrapper i {
+    color: #fff;
+    transform: scale(1.1);
+}
+.unique-blob {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(255, 196, 0, 0.15) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    z-index: 1;
+    animation: blobPulse 4s ease-in-out infinite alternate;
+}
+@keyframes blobPulse {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+    100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.4; }
+}
+
+/* Life @ Shopno Gallery CSS */
+.gallery-img-wrapper {
+    position: relative;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.05);
+    background: #fff;
+    transition: all 0.4s ease;
+    border-radius: 16px !important;
+}
+.gallery-img {
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: 16px !important;
+}
+.gallery-img-wrapper:hover {
+    box-shadow: 0 15px 40px rgba(255, 196, 0, 0.15) !important;
+    border-color: rgba(255, 196, 0, 0.3);
+    z-index: 10;
+}
+.gallery-img-wrapper:hover .gallery-img {
+    transform: scale(1.08);
+}
+
+/* Life @ Shopno Inline Styles Extracted */
+.breadcrumb-separator {
+    color: var(--primary-color);
+    margin: 0 10px;
+}
+.breadcrumb-separator-icon {
+    font-size: 10px;
+}
+.text-theme-primary {
+    color: var(--primary-color);
+}
+.bg-white-theme {
+    background-color: #ffffff;
+}
+.team-hero-img {
+    max-height: 450px;
+    z-index: 2;
+}
+.section-subtitle-theme {
+    color: var(--primary-color);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+.section-title-theme {
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+.title-highlight {
+    position: relative;
+    z-index: 1;
+}
+.title-highlight-svg {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    z-index: -1;
+}
+.section-desc-theme {
+    font-size: 16px;
+    line-height: 1.9;
+    max-width: 600px;
+}
+.bg-light-theme {
+    background-color: #fafafa;
+}
+.pb-100 {
+    padding-bottom: 100px;
+}
+.bg-dots-deco {
+    opacity: 0.03;
+    pointer-events: none;
+}
+.section-subtitle-pill {
+    background: rgba(255, 196, 0, 0.1);
+    color: #d4a000;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}

@@ -78,7 +78,28 @@
             }
         });
 
-        // navbar active color
+        // navbar active color based on URL
+        let pathname = window.location.pathname;
+        let currentUrl = pathname.split("/").pop();
+        if (currentUrl === "" || currentUrl === "index.html" || pathname === "/") {
+            currentUrl = "index.html";
+        }
+        
+        $('.navbar-nav .nav-item a').removeClass("active");
+        $('.navbar-nav .nav-item a').each(function() {
+            let href = $(this).attr('href');
+            if (!href) return;
+            
+        // Match current url, or if current is index.html match '/' as well
+            if (href === currentUrl || href === '/' + currentUrl || href.endsWith('/' + currentUrl)) {
+                $(this).addClass("active");
+            } else if (currentUrl === "index.html" && (href === "/" || href === "/index.html" || href === "index.html")) {
+                $(this).addClass("active");
+            } else if (currentUrl === "blog-details.html" && (href === "blog.html" || href === "/blog.html")) {
+                $(this).addClass("active");
+            }
+        });
+
         $('.navbar-nav .nav-item a').click(function(){
             $('.nav-item a').removeClass("active");
             $(this).addClass("active");
