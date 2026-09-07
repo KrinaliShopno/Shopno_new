@@ -2773,8 +2773,11 @@ label.error {
   z-index: 299;
 }
 
+.header-section .navbar .navbar-toggler i,
 .index .navbar .navbar-toggler i {
-  color: var(--primary-color)8;
+  color: var(--primary-color) !important;
+  font-size: 36px;
+  cursor: pointer;
 }
 
 .header-section .navbar {
@@ -2935,7 +2938,7 @@ label.error {
   top: -70px;
   transform: translateY(70px);
   transition: transform 0.5s;
-  background-color: #03211B;
+  background-color: #111111;
   left: 0;
   width: 100%;
 }
@@ -3046,7 +3049,7 @@ label.error {
 
   .offcanvas {
     background: url(../images/inner_banner.png);
-    background-color: #03211B;
+    background-color: #111111;
     background-repeat: no-repeat;
     background-position: right center;
     background-size: cover;
@@ -3383,7 +3386,7 @@ label.error {
   left: 100%;
   height: 90px;
   z-index: 2;
-  background: url(../images/chat-Photoroom.png) no-repeat center / contain;
+  /* background: url(../images/chat-Photoroom.png) no-repeat center / contain; */
   transform-origin: bottom;
   animation: spinSmall 5s infinite;
 }
@@ -3494,7 +3497,7 @@ position: absolute;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #03211B;
+  background-color: #111111;
   z-index: -1;
 }
 
@@ -3507,7 +3510,7 @@ position: absolute;
   height: 100%;
   background: none;
   background: url(../images/hero--secondary_bg.png);
-  background-color: #03211B;
+  background-color: #111111;
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
