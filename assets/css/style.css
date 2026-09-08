@@ -3870,18 +3870,31 @@ position: absolute;
 }
 
 .footer .newsletter__content-form .input-group {
-  border: 1px solid var(--text-color);
-  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  background-color: #ffffff;
+  padding: 6px;
+  display: flex;
+  align-items: center;
 }
 
 .footer .newsletter__content-form .input-group input {
   border: 0px;
   outline: 0px;
-  color: white;
+  color: #000000;
+  box-shadow: none;
 }
 
 .footer .newsletter__content-form .input-group input.form-control {
   background: transparent;
+  padding: 10px 20px;
+  height: auto;
+}
+
+.footer .newsletter__content-form .input-group input.form-control:focus {
+  background: transparent;
+  box-shadow: none;
+  color: #000000;
 }
 
 .footer__logo a img {
@@ -3889,24 +3902,38 @@ position: absolute;
 }
 
 .footer .newsletter__content-form .input-group input::-moz-placeholder {
-  color: #EBECEF !important;
+  color: #6c757d !important;
 }
 
 .footer .newsletter__content-form .input-group input::placeholder {
-  color: #EBECEF !important;
+  color: #6c757d !important;
 }
 
 .footer .newsletter__content-form .emailSubscribe {
   display: flex;
-  padding: 12px 12px;
+  padding: 0;
+  width: 48px;
+  height: 48px;
   justify-content: center;
   align-items: center;
-  border-radius: 30px !important;
-  margin: 8px;
+  border-radius: 50% !important;
+  margin: 0;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: none;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.footer .newsletter__content-form .emailSubscribe:hover {
+  background-color: var(--primary-color) !important;
+  color: #ffffff !important;
+  transform: scale(1.05);
 }
 
 .footer .newsletter__content-form .emailSubscribe i {
-  font-size: 24px;
+  font-size: 20px;
+  margin-left: -2px;
 }
 
 .quick-link ul {
@@ -4034,12 +4061,13 @@ position: absolute;
 
 @media (max-width: 767px) {
   .footer .newsletter__content-form .emailSubscribe {
-    padding: 4px 18px;
-    margin: 4px;
+    width: 40px;
+    height: 40px;
+    margin: 0;
   }
 
   .footer .newsletter__content-form .emailSubscribe i {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .footer .footer__copyright .footer__copyright-conditions {
@@ -4062,8 +4090,8 @@ position: absolute;
 }
 
 @media (max-width: 479px) {
-  .footer .footer__newsletter-form .newsletter__content-form input.emailSubscribe {
-    padding: 16px 20px;
+  .footer .footer__newsletter-form .newsletter__content-form .emailSubscribe {
+    padding: 0;
   }
 
   .footer-secondary .footer-secondary__content .quick-link .quick-link__list {

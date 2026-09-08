@@ -37,10 +37,137 @@
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <meta name="google-site-verification" content="TqXJQBErzvI8Dui3v6OTsCDPPPqvA8AggA2lEfyznoE" />
+<style>
+    .unique-card {
+        background: #ffffff;
+        border-radius: 20px;
+        border: 1px solid rgba(0,0,0,0.03);
+        box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+        overflow: hidden;
+        position: relative;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .unique-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        border-color: rgba(255, 153, 0, 0.2);
+    }
+    .unique-card-image {
+        position: relative;
+        width: 100%;
+        height: 240px;
+        overflow: hidden;
+    }
+    .unique-card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .unique-card:hover .unique-card-image img {
+        transform: scale(1.08);
+    }
+    .category-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.95);
+        color: #111;
+        padding: 6px 16px;
+        border-radius: 30px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+    .unique-card-content {
+        padding: 30px;
+        padding-top: 45px;
+        position: relative;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .brand-avatar {
+        position: absolute;
+        top: -30px;
+        left: 30px;
+        width: 60px;
+        height: 60px;
+        background: #ffffff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        padding: 10px;
+        z-index: 2;
+        transition: transform 0.4s ease;
+    }
+    .unique-card:hover .brand-avatar {
+        transform: scale(1.1);
+    }
+    .brand-avatar img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+    .unique-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 15px;
+    }
+    .unique-card-header h3 {
+        font-size: 20px;
+        font-weight: 800;
+        color: #111;
+        margin: 0;
+        line-height: 1.3;
+    }
+    .btn-circular {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: #f4f4f4;
+        color: #111;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        flex-shrink: 0;
+        margin-left: 15px;
+    }
+    .btn-circular i {
+        font-size: 18px;
+        transition: transform 0.4s ease;
+    }
+    .unique-card:hover .btn-circular {
+        background: #ff9900;
+        color: #fff;
+        transform: rotate(45deg);
+        box-shadow: 0 10px 20px rgba(255, 153, 0, 0.3);
+    }
+    .unique-card-content p {
+        color: #666;
+        font-size: 14px;
+        line-height: 1.7;
+        margin: 0;
+        font-weight: 400;
+    }
+    .portfolio-tabs a:hover {
+        color: #ff9900 !important;
+    }
+</style>
 </head>
 
 <body>
-
     <!--  Preloader  -->
     <div class="preloader1">
         <div class="logo-loader">
@@ -65,7 +192,7 @@
                             <div class="main-menu index-page">
                                 <ul class="navbar-nav mb-lg-0 mx-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link " href="/index.html"> Home </a>
+                                        <a class="nav-link" href="index.html"> Home </a>
 
                                         <!-- <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="index.html">Home One</a></li>
@@ -76,7 +203,7 @@
                                         </ul> -->
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="about.html"> About Us </a>
+                                        <a class="nav-link " href="about.html"> About Us </a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="service.html" role="button"
@@ -93,10 +220,10 @@
                                         </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link " href="portfolio.html">Portfolio </a>
+                                        <a class="nav-link active" href="portfolio.html">Portfolio </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="blog.html">Blog</a>
+                                        <a class="nav-link " href="blog.html">Blog </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link " href="#">life @ shopno </a>
@@ -104,7 +231,7 @@
 
 
                                     <!-- <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Loan Reviews </a>
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true"> Loan Reviews </a>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="loan-reviews.html">Loan Reviews</a></li>
                                             <li><a class="dropdown-item" href="loan-reviews-details.html">Loan Reviews Details</a></li>
@@ -115,7 +242,7 @@
                                         <a class="nav-link" href="loan-comparison.html">Loan Comparison</a>
                                     </li> -->
                                     <!-- <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Pages </a>
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true"> Pages </a>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="about.html">about Us</a></li>
                                             <li><a class="dropdown-item" href="service.html">service</a></li>
@@ -252,23 +379,8 @@
     </div>
     <!-- header-section end -->
 
-    <!-- Banner Start -->
-    <!-- <section class="banner">
-        <div class="container ">
-            <div class="row gy-4 gy-sm-0 align-items-center">
-                <div class="col-12 col-sm-12">
-                    <div class="banner__content">
-                        <h1 class="banner__title display-4 wow fadeInLeft text-center" data-wow-duration="0.8s">about us</h1> 
-               
-                    </div>
-                </div>
-               
-            </div>
-        </div>
-    </section> -->
-    <!-- Banner End -->
 
-    <!-- ──────── PAGE BANNER ──────── -->
+        <!-- ???????? PAGE BANNER ???????? -->
     <section class="page-banner">
         <div class="floating-shapes">
             <div class="shape shape-1"></div>
@@ -277,188 +389,160 @@
         </div>
         <div class="container">
             <div class="breadcrumb-wrap">
-                <h1>Life @ <span>Shopno</span></h1>
                 <div class="breadcrumb-nav">
                     <a href="index.html">Home</a>
-                    <span class="breadcrumb-separator"><i
-                            class="bi bi-chevron-left breadcrumb-separator-icon"></i></span>
-                    <span class="text-theme-primary">Life @ Shopno</span>
+                    <span>/</span>
+                    <span style="color:#fff;">Portfolio</span>
                 </div>
+                <h1>Our <span>Portfolio</span></h1>
+                <div class="banner-accent-line"></div>
             </div>
         </div>
     </section>
 
-    <!-- ──────── JOIN THE TEAM ──────── -->
-    <section class="about-us section">
+        <!-- Portfolio Section Start -->
+    <section class="portfolio-page-section" style="background-color: #fcfcfc; padding: 100px 0;">
         <div class="container">
-            <div class="row gy-5 g-5 align-items-center">
-
-                <!-- LEFT IMAGE -->
-                <div class="col-lg-5 text-center wow fadeInLeft" data-wow-duration="0.8s">
-                    <img src="assets/images/aboutsus.png" class="img-fluid floating-img" alt="Shopno Team"
-                        loading="lazy" decoding="async">
-                </div>
-
-                <!-- RIGHT CONTENT -->
-                <div class="col-lg-7">
-                    <div class="section__content">
-                        <span class="section__content-sub-title headingFour wow fadeInDown" data-wow-duration="0.8s">
-                            <img src="assets/images/right-Arrow-Photoroom.png"
-                                alt="Shopify ecommerce website development" loading="lazy" decoding="async">
-                            Join The Shopno Team
-                        </span>
-
-                        <h2 class="section__content-title wow fadeInDown">
-                            Unlock Your Career <span>Potential</span>
-                        </h2>
-
-                        <p class="section__content-text wow fadeInDown">
-                            We Prioritize Our Clients' Needs Above All Else, Acting As Trusted Advisors Rather Than Tied
-                            To Any Particular Tool Or Platform. Our Approach Is Grounded In Delivering Tangible Results
-                            And Meaningful Outcomes. We Eschew Empty Hype And Focus On Driving Productivity, Fostering
-                            Innovation, Ensuring Client Satisfaction, And Promoting Employee Retention. At Every Step,
-                            We Hold Ourselves Accountable To Our Clients, Striving To Exceed Expectations And Deliver
-                            Exceptional Value.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ──────── CULTURE & VALUES ──────── -->
-    <section class="mission-vision section-sm">
-        <div class="container">
-            <div class="row justify-content-center mb-5 ">
-                <div class="col-12 col-lg-7 text-center wow fadeInDown" data-wow-duration="0.8s">
-                    <span class="section__header-sub-title">
-                        <img src="assets/images/right-Arrow-Photoroom.png" alt="" loading="lazy">
-                        Vibing Together
-                    </span>
-                    <h2 class="section__header-title">Unveiling Our Funky Culture <br>& <span>Core Values</span></h2>
+            <!-- Tabs -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-12 text-center">
+                    <ul class="portfolio-tabs list-unstyled d-flex justify-content-center gap-4" id="portfolioTabs">
+                        <li><a href="#" data-filter="all" class="active" style="color: #ff9900; border-bottom: 2px solid #ff9900; padding-bottom: 5px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; font-size: 14px;">All</a></li>
+                        <li><a href="#" data-filter="websites" style="color: #555555; padding-bottom: 5px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; font-size: 14px;">Websites</a></li>
+                        <li><a href="#" data-filter="applications" style="color: #555555; padding-bottom: 5px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; font-size: 14px;">Applications</a></li>
+                        <li><a href="#" data-filter="software" style="color: #555555; padding-bottom: 5px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; font-size: 14px;">Software</a></li>
+                    </ul>
                 </div>
             </div>
 
+            <!-- Portfolio Grid -->
             <div class="row g-4">
-                <!-- Card 1 -->
-                <div class="col-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">
-                    <div class="mv-card h-100">
-                        <div class="mv-card__icon"><i class="bi bi-cloud-haze2"></i></div>
-                        <h3>Alternative Saturday Offs</h3>
-                        <p>Embrace The Joy Of An Extended Weekend Every Other Week, Granting You Ample Time To Unwind,
-                            Explore Your Passions, And Connect With Loved Ones. With Our Alternative Saturday Offs,
-                            You'll Have The Flexibility To Rejuvenate And Return To Work Feeling Refreshed...</p>
+                <!-- Item 1 -->
+                <div class="col-lg-4 col-md-6 portfolio-item software websites">
+                    <div class="unique-card">
+                        <div class="unique-card-image">
+                            <img src="assets/images/portfolio/portfolio_bookmyassignment_1788862947820.jpg" alt="Bookmyassignment">
+                            <div class="category-badge">Software</div>
+                        </div>
+                        <div class="unique-card-content">
+                            <div class="brand-avatar">
+                                <img src="assets/images/logo2-Photoroom.png" alt="Shopno">
+                            </div>
+                            <div class="unique-card-header">
+                                <h3>Bookmyassignment</h3>
+                                <a href="#" class="btn-circular"><i class="bi bi-arrow-up-right"></i></a>
+                            </div>
+                            <p>Comprehensive educational software and website services, providing access to a vast repository of resources for learning.</p>
+                        </div>
                     </div>
                 </div>
-                <!-- Card 2 -->
-                <div class="col-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                    <div class="mv-card h-100">
-                        <div class="mv-card__icon"><i class="bi bi-person-hearts"></i></div>
-                        <h3>Support Squad Central</h3>
-                        <p>Get Ready To Experience The Ultimate Support System At Shopno! We're Not Just An IT Company;
-                            We're A Family Committed To Your Well-Being And Success. Imagine Having Your Own Personal
-                            Cheer Squad, Rooting For You Every Step Of The Way...</p>
+
+                <!-- Item 2 -->
+                <div class="col-lg-4 col-md-6 portfolio-item websites software">
+                    <div class="unique-card">
+                        <div class="unique-card-image">
+                            <img src="assets/images/portfolio/portfolio_varney_1788862964967.jpg" alt="Varney Fabric">
+                            <div class="category-badge">Website</div>
+                        </div>
+                        <div class="unique-card-content">
+                            <div class="brand-avatar">
+                                <img src="assets/images/logo2-Photoroom.png" alt="Shopno">
+                            </div>
+                            <div class="unique-card-header">
+                                <h3>Varney Fabric</h3>
+                                <a href="#" class="btn-circular"><i class="bi bi-arrow-up-right"></i></a>
+                            </div>
+                            <p>The ultimate fabric destination offering a wide range of textiles. From luxurious silk to durable denim, find the perfect solution.</p>
+                        </div>
                     </div>
                 </div>
-                <!-- Card 3 -->
-                <div class="col-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                    <div class="mv-card h-100">
-                        <div class="mv-card__icon"><i class="bi bi-signpost-split"></i></div>
-                        <h3>Rock Your Career Path</h3>
-                        <p>Get Ready To Groove With Our Opportunities For Advancement! At Shopno, We're All About
-                            Helping You Unleash Your Full Potential. Whether You're Itching To Climb The Corporate
-                            Ladder Or Explore New Career Avenues Within Our Funky Family, We've Got The Rhythm...</p>
+
+                <!-- Item 3 -->
+                <div class="col-lg-4 col-md-6 portfolio-item websites">
+                    <div class="unique-card">
+                        <div class="unique-card-image">
+                            <img src="assets/images/portfolio/portfolio_dotivala_1788862979453.jpg" alt="Dotivala Bakery">
+                            <div class="category-badge">Website</div>
+                        </div>
+                        <div class="unique-card-content">
+                            <div class="brand-avatar">
+                                <img src="assets/images/logo2-Photoroom.png" alt="Shopno">
+                            </div>
+                            <div class="unique-card-header">
+                                <h3>Dotivala Bakery</h3>
+                                <a href="#" class="btn-circular"><i class="bi bi-arrow-up-right"></i></a>
+                            </div>
+                            <p>Where tradition blends with creativity, baking delightful treats and confections to sweeten every occasion.</p>
+                        </div>
                     </div>
                 </div>
-                <!-- Card 4 -->
-                <div class="col-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
-                    <div class="mv-card h-100">
-                        <div class="mv-card__icon"><i class="bi bi-puzzle"></i></div>
-                        <h3>Unleash Your Funky Side</h3>
-                        <p>At Shopno, Work Is Not Just About Tasks; It's About Enjoying The Journey. From Epic Team
-                            Outings To In-Office Perks That Make You Smile, We're All About Infusing Fun Into Our Daily
-                            Grind. Picture This: Team Karaoke Showdowns, Spontaneous Nerf Gun Battles...</p>
+
+                <!-- Item 4 -->
+                <div class="col-lg-4 col-md-6 portfolio-item websites">
+                    <div class="unique-card">
+                        <div class="unique-card-image">
+                            <img src="assets/images/portfolio/portfolio_voguetown_1788862994116.jpg" alt="Voguetown">
+                            <div class="category-badge">E-Commerce</div>
+                        </div>
+                        <div class="unique-card-content">
+                            <div class="brand-avatar">
+                                <img src="assets/images/logo2-Photoroom.png" alt="Shopno">
+                            </div>
+                            <div class="unique-card-header">
+                                <h3>Voguetown</h3>
+                                <a href="#" class="btn-circular"><i class="bi bi-arrow-up-right"></i></a>
+                            </div>
+                            <p>Online haven for timeless bridal and groom attire, blending heritage with modern elegance for unforgettable wedding moments.</p>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Item 5 -->
+                <div class="col-lg-4 col-md-6 portfolio-item websites applications">
+                    <div class="unique-card">
+                        <div class="unique-card-image">
+                            <img src="assets/images/portfolio/portfolio_zegoom_1788863010066.jpg" alt="Zegoom">
+                            <div class="category-badge">Application</div>
+                        </div>
+                        <div class="unique-card-content">
+                            <div class="brand-avatar">
+                                <img src="assets/images/logo2-Photoroom.png" alt="Shopno">
+                            </div>
+                            <div class="unique-card-header">
+                                <h3>Zegoom</h3>
+                                <a href="#" class="btn-circular"><i class="bi bi-arrow-up-right"></i></a>
+                            </div>
+                            <p>Your go-to online destination for buying an exquisite collection of sarees, offering a seamless mobile and web experience.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="col-lg-4 col-md-6 portfolio-item websites applications">
+                    <div class="unique-card">
+                        <div class="unique-card-image">
+                            <img src="assets/images/portfolio/portfolio_gfh_1788863050346.jpg" alt="GFH Collection">
+                            <div class="category-badge">Application</div>
+                        </div>
+                        <div class="unique-card-content">
+                            <div class="brand-avatar">
+                                <img src="assets/images/logo2-Photoroom.png" alt="Shopno">
+                            </div>
+                            <div class="unique-card-header">
+                                <h3>GFH Collection</h3>
+                                <a href="#" class="btn-circular"><i class="bi bi-arrow-up-right"></i></a>
+                            </div>
+                            <p>Your ultimate online store for stylish and trendy Kurtis, offering a comprehensive multi-platform shopping experience.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
+    <!-- Portfolio Section End -->
 
-    <!-- ──────── GALLERY SECTION ──────── -->
-    <section class="section-sm bg-white">
-        <div class="container">
-            <div class="row justify-content-center mb-5 mt-5">
-                <div class="col-12 col-lg-7 text-center wow fadeInDown" data-wow-duration="0.8s">
-                    <span class="section__header-sub-title">
-                        <img src="assets/images/right-Arrow-Photoroom.png" alt="" loading="lazy">
-                        Life In Action
-                    </span>
-                    <h2 class="section__header-title">Glimpses Of <span>Shopno</span></h2>
-                </div>
-            </div>
 
-            <div class="gallery-slider mt-4">
-                <div class="px-3">
-                    <div class="gallery-img-wrapper rounded-4 overflow-hidden shadow-sm">
-                        <img src="assets/images/gallery/gall1.jpeg" class="img-fluid w-100 gallery-img"
-                            alt="Gallery Image 1" style="object-fit: cover; height: 250px;">
-                    </div>
-                </div>
-                <div class="px-3">
-                    <div class="gallery-img-wrapper rounded-4 overflow-hidden shadow-sm">
-                        <img src="assets/images/gallery/gall2.jpeg" class="img-fluid w-100 gallery-img"
-                            alt="Gallery Image 2" style="object-fit: cover; height: 250px;">
-                    </div>
-                </div>
-                <div class="px-3">
-                    <div class="gallery-img-wrapper rounded-4 overflow-hidden shadow-sm">
-                        <img src="assets/images/gallery/gall5.jpeg" class="img-fluid w-100 gallery-img"
-                            alt="Gallery Image 3" style="object-fit: cover; height: 250px;">
-                    </div>
-                </div>
-                <div class="px-3">
-                    <div class="gallery-img-wrapper rounded-4 overflow-hidden shadow-sm">
-                        <img src="assets/images/gallery/gall12.jpeg" class="img-fluid w-100 gallery-img"
-                            alt="Gallery Image 4" style="object-fit: cover; height: 250px;">
-                    </div>
-                </div>
-                <div class="px-3">
-                    <div class="gallery-img-wrapper rounded-4 overflow-hidden shadow-sm">
-                        <img src="assets/images/gallery/image_opening_2.jpg" class="img-fluid w-100 gallery-img"
-                            alt="Gallery Image 5" style="object-fit: cover; height: 250px;">
-                    </div>
-                </div>
-                <div class="px-3">
-                    <div class="gallery-img-wrapper rounded-4 overflow-hidden shadow-sm">
-                        <img src="assets/images/gallery/image_opening_7.jpg" class="img-fluid w-100 gallery-img"
-                            alt="Gallery Image 6" style="object-fit: cover; height: 250px;">
-                    </div>
-                </div>
-                <div class="px-3">
-                    <div class="gallery-img-wrapper rounded-4 overflow-hidden shadow-sm">
-                        <img src="assets/images/gallery/unnamed.webp" class="img-fluid w-100 gallery-img"
-                            alt="Gallery Image 7" style="object-fit: cover; height: 250px;">
-                    </div>
-                </div>
-                <div class="px-3">
-                    <div class="gallery-img-wrapper rounded-4 overflow-hidden shadow-sm">
-                        <img src="assets/images/gallery/1ddb77272da96470fbbdd85586ec7c54.jpeg"
-                            class="img-fluid w-100 gallery-img" alt="Gallery Image 8"
-                            style="object-fit: cover; height: 250px;">
-                    </div>
-                </div>
-                <div class="px-3">
-                    <div class="gallery-img-wrapper rounded-4 overflow-hidden shadow-sm">
-                        <img src="assets/images/gallery/aecb88de08f9484dc70960096c2abf44.jpeg"
-                            class="img-fluid w-100 gallery-img" alt="Gallery Image 9"
-                            style="object-fit: cover; height: 250px;">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Footer Area Start -->
     <footer class="footer">
         <div class="container">
             <div class="row section gy-5 gy-xl-0">
@@ -520,7 +604,6 @@
                         </form>
                     </div>
                 </div>
-
                 <div class="col-12 col-sm-6 col-xl-3">
                     <div class="quick-link ms-sm-4 ms-xl-0 wow fadeInRight" data-wow-duration="0.8s">
                         <h4 class="footer__title mb-4">Quick Link</h4>
@@ -554,9 +637,9 @@
                 style="width: 150px;height: 150px" autoplay loop></dotlottie-wc>
         </div> -->
     </footer>
+
     <!-- Footer Area End -->
 
-    <!-- scroll to top -->
     <!-- scroll to top -->
     <a href="#" class="scrollToTop"><i class="bi bi-chevron-double-up"></i></a>
     <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.10/dist/dotlottie-wc.js" type="module"></script>
@@ -593,18 +676,118 @@
     <!-- main js -->
     <script defer src="assets/js/main.js"></script>
     <script>
-        window.addEventListener("load", function () {
-            const loader = document.querySelector(".preloader1");
+        const members = [
+            { name: "Bhavik Vala", role: "Founder" },
+            { name: "Ravi Chovatiya", role: "CEO" },
+            { name: "bhautik Mandaviya", role: "Manager" },
+            { name: "sagar Chotaliya", role: "PHP Developer" },
+            { name: "Sharad salodiya", role: "App Developer" },
+            { name: "Krinali Paneliya", role: "Web designer" },
+            { name: "Rajvi Vasavda", role: "PHP Developer" },
+            { name: "Honey gajera", role: "PHP Developer" }
+        ];
+        const cards = document.querySelectorAll(".crd");
+        const dotsWrap = document.getElementById("dotsWrap");
+        const mName = document.getElementById("mName");
+        const mRole = document.getElementById("mRole");
+        const info = document.getElementById("info");
+        const total = cards.length;
+        let cur = 0, busy = false, dotEls = [];
 
-            document.body.classList.add("loaded");
+        members.forEach((_, i) => {
+            const d = document.createElement("div");
+            d.className = "dot" + (i === 0 ? " active" : "");
+            d.onclick = () => goTo(i);
+            dotsWrap.appendChild(d);
+            dotEls.push(d);
+        });
 
-            loader.style.opacity = "0";
+        function layout(offset) {
+            const m = window.innerWidth < 600;
+            const g1 = m ? 100 : 155, g2 = m ? 185 : 285;
+            const map = {
+                "0": { x: 0, z: 0, s: 1.08, o: 1, zi: 10 },
+                "1": { x: g1, z: -130, s: 0.87, o: 0.82, zi: 7 },
+                "-1": { x: -g1, z: -130, s: 0.87, o: 0.82, zi: 7 },
+                "2": { x: g2, z: -300, s: 0.73, o: 0.5, zi: 4 },
+                "-2": { x: -g2, z: -300, s: 0.73, o: 0.5, zi: 4 }
+            };
+            return map[String(offset)] || { x: offset > 0 ? 550 : -550, z: -600, s: 0.5, o: 0, zi: 1 };
+        }
 
+        function render(anim) {
+            cards.forEach((c, i) => {
+                let off = i - cur;
+                if (off > total / 2) off -= total;
+                if (off < -total / 2) off += total;
+                const { x, z, s, o, zi } = layout(off);
+                c.style.transition = anim ? "transform 0.65s cubic-bezier(0.4,0,0.2,1),opacity 0.65s ease,box-shadow 0.65s ease" : "none";
+                c.style.transform = `translateX(${x}px) translateZ(${z}px) scale(${s})`;
+                c.style.opacity = o;
+                c.style.zIndex = zi;
+                c.classList.toggle("active", off === 0);
+            });
+            dotEls.forEach((d, i) => d.classList.toggle("active", i === cur));
+        }
+
+        function updateInfo() {
+            info.style.transition = "opacity 0.25s,transform 0.25s";
+            info.style.opacity = "0"; info.style.transform = "translateY(8px)";
             setTimeout(() => {
-                loader.style.display = "none";
-            }, 500);
+                mName.textContent = members[cur].name;
+                mRole.textContent = members[cur].role;
+                info.style.opacity = "1"; info.style.transform = "translateY(0)";
+            }, 220);
+        }
+
+        function goTo(idx) {
+            if (busy) return;
+            const next = ((idx % total) + total) % total;
+            if (next === cur) return;
+            busy = true; cur = next;
+            render(true); updateInfo();
+            setTimeout(() => busy = false, 700);
+        }
+
+        document.getElementById("prevBtn").onclick = e => { e.preventDefault(); e.stopPropagation(); goTo(cur - 1) };
+        document.getElementById("nextBtn").onclick = e => { e.preventDefault(); e.stopPropagation(); goTo(cur + 1) };
+
+        cards.forEach((c, i) => c.onclick = () => {
+            let off = i - cur;
+            if (off > total / 2) off -= total;
+            if (off < -total / 2) off += total;
+            if (off !== 0) goTo(i);
+        });
+
+        window.addEventListener("resize", () => render(false));
+        render(false);
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const loader = document.querySelector(".preloader1");
+            if (loader) {
+                document.body.classList.add("loaded");
+                loader.style.opacity = "0";
+                setTimeout(() => {
+                    loader.style.display = "none";
+                }, 500);
+            }
+        });
+
+        window.addEventListener("load", function () {
+            // Backup in case DOMContentLoaded was missed
+            const loader = document.querySelector(".preloader1");
+            if (loader && loader.style.display !== "none") {
+                document.body.classList.add("loaded");
+                loader.style.opacity = "0";
+                setTimeout(() => {
+                    loader.style.display = "none";
+                }, 500);
+            }
         });
     </script>
+    <!-- ✅ CAROUSEL FIX - main.js ni NICHE paste karo -->
     <script>
         window.addEventListener('load', function () {
 
@@ -673,32 +856,117 @@
                 $('.testimonials-slider').slick('slickNext');
             });
 
+        });
+    </script>
 
-            // ── 4. GALLERY SLIDER ──────────────────────────
-            if (typeof $.fn.slick !== 'undefined' && $('.gallery-slider').length) {
-                if ($('.gallery-slider').hasClass('slick-initialized')) {
-                    $('.gallery-slider').slick('destroy');
-                }
-                $('.gallery-slider').slick({
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    arrows: true,
-                    prevArrow: '<button class="prev-testimonials pagination-button shadow-sm" style="position: absolute; left: -20px; top: 40%; z-index: 2; background: #fff; width: 40px; height: 40px; border-radius: 50%;"><i class="bi bi-chevron-left text-dark"></i></button>',
-                    nextArrow: '<button class="next-testimonials pagination-button shadow-sm" style="position: absolute; right: -20px; top: 40%; z-index: 2; background: #fff; width: 40px; height: 40px; border-radius: 50%;"><i class="bi bi-chevron-right text-dark"></i></button>',
-                    infinite: true,
-                    speed: 600,
-                    autoplay: true,
-                    autoplaySpeed: 2500,
-                    responsive: [
-                        { breakpoint: 992, settings: { slidesToShow: 2 } },
-                        { breakpoint: 576, settings: { slidesToShow: 1 } }
-                    ]
-                });
+
+    <script>
+        const track = document.getElementById("logoTrack");
+        let speed = 0.8; // control speed
+        let position = 0;
+
+        // clone dynamically (not manual)
+        track.innerHTML += track.innerHTML;
+
+        function animate() {
+            position -= speed;
+
+            // reset when half scroll complete
+            if (Math.abs(position) >= track.scrollWidth / 2) {
+                position = 0;
             }
+
+            track.style.transform = `translateX(${position}px)`;
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+    <script>
+
+        /* Animate only this part */
+        const text = "Your eCommerce Business";
+
+        let index = 0;
+        let isDeleting = false;
+
+        function animateText() {
+            const el = document.getElementById("text");
+
+            if (!isDeleting) {
+                index++;
+                el.textContent = text.substring(0, index);
+
+                if (index === text.length) {
+                    isDeleting = true;
+                    setTimeout(animateText, 1500);
+                    return;
+                }
+            } else {
+                index--;
+                el.textContent = text.substring(0, index);
+
+                if (index === 0) {
+                    isDeleting = false;
+                }
+            }
+
+            setTimeout(animateText, isDeleting ? 40 : 60);
+        }
+
+        animateText();
+
+    </script>
+    <!-- Portfolio Filter Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const tabs = document.querySelectorAll("#portfolioTabs a");
+            const items = document.querySelectorAll(".portfolio-item");
+
+            tabs.forEach(tab => {
+                tab.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active styles from all
+                    tabs.forEach(t => {
+                        t.classList.remove("active");
+                        t.style.color = "#333333";
+                        t.style.borderBottom = "none";
+                    });
+                    
+                    // Add active styles to clicked
+                    this.classList.add("active");
+                    this.style.color = "#ff9900";
+                    this.style.borderBottom = "2px solid #ff9900";
+                    
+                    const filter = this.getAttribute("data-filter");
+                    
+                    // Show/Hide items with smooth fade effect
+                    items.forEach(item => {
+                        item.style.transition = "opacity 0.3s ease, transform 0.3s ease";
+                        if (filter === "all" || item.classList.contains(filter)) {
+                            item.style.display = "block";
+                            setTimeout(() => {
+                                item.style.opacity = "1";
+                                item.style.transform = "scale(1)";
+                            }, 50);
+                        } else {
+                            item.style.opacity = "0";
+                            item.style.transform = "scale(0.95)";
+                            setTimeout(() => {
+                                item.style.display = "none";
+                            }, 300);
+                        }
+                    });
+                });
+            });
         });
     </script>
 </body>
 
-<!-- Mirrored from pixner.net/finview/main/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Apr 2026 09:15:50 GMT -->
+<!-- Mirrored from pixner.net/finview/main/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Apr 2026 09:15:17 GMT -->
 
 </html>
+
+
+
