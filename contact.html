@@ -285,7 +285,7 @@
                                     <div class="form-group">
                                         <label for="phone">Phone Number</label>
                                         <input type="tel" id="phone" class="form-control glass-input"
-                                            placeholder="+91 1234567890" required>
+                                            placeholder="9876543210" required maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-12">
@@ -436,7 +436,7 @@ document.getElementById("ultraContactForm").addEventListener("submit", function 
 
     const text = `*📩 Website Enquiry*
 
-Hello Shopno Team,
+Hello Shopno,
 
 You have received a new enquiry from your website.
 

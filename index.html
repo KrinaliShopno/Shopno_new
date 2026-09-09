@@ -1612,7 +1612,7 @@
                     </div>
                     <div class="f-grp">
                         <label>Phone number *</label>
-                        <input type="tel" placeholder="+91 98765 43210">
+                        <input type="tel" placeholder="9876543210" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
                     </div>
                 </div>
 
@@ -2157,6 +2157,136 @@
         animateText();
 
     </script>
+    <!-- Enquiry Modal -->
+    <div id="waEnquiryModal" class="wa-modal-overlay">
+        <div class="wa-modal-content eq-form">
+            <span class="wa-close-btn">&times;</span>
+            <div class="f-head" style="margin-bottom: 25px; text-align: center;">
+                <div class="f-title" style="font-size: 28px;">Send us an enquiry</div>
+            </div>
+            <form id="waModalForm">
+                <div class="f-grp" style="margin-bottom: 20px;">
+                    <label>Your Name *</label>
+                    <input type="text" id="waInqName" placeholder="e.g. Rahul Sharma" required
+                        style="width: 100%; padding: 14px; border-radius: 8px;">
+                </div>
+                <div class="f-grp" style="margin-bottom: 20px;">
+                    <label>Phone Number *</label>
+                    <input type="tel" id="waInqPhone" placeholder="e.g. 9876543210" required
+                        maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                        style="width: 100%; padding: 14px; border-radius: 8px;">
+                </div>
+                <div class="f-grp" style="margin-bottom: 20px;">
+                    <label>Your Requirements *</label>
+                    <textarea id="waInqReq" placeholder="Tell us about your goals or services you're interested in..."
+                        required style="width: 100%; padding: 14px; border-radius: 8px; min-height: 120px;"></textarea>
+                </div>
+                <button type="submit" class="submit-btn"
+                    style="margin-top: 15px; width: 100%; font-size: 18px; padding: 16px;">Submit to WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Modal Logic
+            const modal = document.getElementById('waEnquiryModal');
+            const closeBtn = document.querySelector('.wa-close-btn');
+            const enquiryLinks = document.querySelectorAll('a[href="#enquiry"]');
+
+            enquiryLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    modal.style.display = 'flex';
+                });
+            });
+
+            closeBtn.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            // Modal Form Submit to WA
+            document.getElementById('waModalForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+                let name = document.getElementById('waInqName').value;
+                let phone = document.getElementById('waInqPhone').value;
+                let req = document.getElementById('waInqReq').value;
+
+                let msg = `🔹 *Website Enquiry*\n\nHello Shopno,\n\nYou have received a new enquiry from your website.\n\n🔹 *Name:* ${name}\n🔹 *Phone:* ${phone}\n🔹 *Message:* ${req}\n\nPlease get in touch with the customer at your earliest convenience.\n\nThank you.`;
+                let waUrl = `https://wa.me/917016268071?text=${encodeURIComponent(msg)}`;
+                window.open(waUrl, '_blank');
+                modal.style.display = 'none';
+                this.reset();
+            });
+
+            // Handle the bottom static form as well
+            const staticSubmitBtn = document.querySelector('.eq-wrap .eq-form .submit-btn');
+            if (staticSubmitBtn) {
+                staticSubmitBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    let eqForm = staticSubmitBtn.closest('.eq-form');
+                    let inputs = eqForm.querySelectorAll('input, select, textarea');
+                    let name = inputs[0] ? inputs[0].value : '';
+                    let company = inputs[1] ? inputs[1].value : '';
+                    let email = inputs[2] ? inputs[2].value : '';
+                    let phone = inputs[3] ? inputs[3].value : '';
+                    let businessType = inputs[4] ? inputs[4].value : '';
+                    let req = inputs[5] ? inputs[5].value : '';
+
+                    if (!name || !company || !email || !phone || !businessType) {
+                        alert("Please fill all required fields.");
+                        return;
+                    }
+
+                    let msg = `🔹 *Website Enquiry*\n\nHello Shopno Team,\n\nYou have received a new enquiry from your website.\n\n🔹 *Name:* ${name}\n🔹 *Company:* ${company}\n🔹 *Email:* ${email}\n🔹 *Phone:* ${phone}\n🔹 *Business Type:* ${businessType}\n🔹 *Requirements:* ${req}\n\nPlease get in touch with the customer at your earliest convenience.\n\nThank you.`;
+                    let waUrl = `https://wa.me/917016268071?text=${encodeURIComponent(msg)}`;
+                    window.open(waUrl, '_blank');
+
+                    // Reset static form fields
+                    inputs.forEach(input => input.value = '');
+                });
+            }
+        });
+    </script>
+    <!-- Sticky WhatsApp Button -->
+    <div class="wa-floating-btn" onclick="this.classList.toggle('active')">
+        <div class="wa-popup">
+            <div class="wa-popup-header">
+                <i class="bi bi-whatsapp"></i>
+                <div class="wa-header-text">
+                    <strong>Start a Conversation</strong>
+                    <span>Typically replies in minutes</span>
+                </div>
+            </div>
+            <div class="wa-popup-body">
+                <a href="https://wa.me/918866779008" target="_blank" class="wa-popup-card">
+                    <div class="wa-avatar">DP</div>
+                    <div class="wa-card-text">
+                        <strong>Bhavik Bhai</strong>
+                        <span>+91 88667 79008</span>
+                    </div>
+                    <div class="wa-send-btn"><i class="bi bi-send-fill"></i></div>
+                </a>
+                <a href="https://wa.me/917016268071" target="_blank" class="wa-popup-card">
+                    <div class="wa-avatar">SM</div>
+                    <div class="wa-card-text">
+                        <strong>Ravi Bhai</strong>
+                        <span>+91 70162 68071</span>
+                    </div>
+                    <div class="wa-send-btn"><i class="bi bi-send-fill"></i></div>
+                </a>
+            </div>
+        </div>
+        <div class="wa-icon">
+            <i class="bi bi-whatsapp"></i>
+        </div>
+    </div>
 </body>
 
 <!-- Mirrored from pixner.net/finview/main/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Apr 2026 09:15:17 GMT -->
